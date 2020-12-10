@@ -1,0 +1,562 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "userdetails": {
+                "roles": [],
+                "type": "object",
+                "properties": {
+                    "parent": {
+                        "actualName": "Parent",
+                        "type": "string"
+                    },
+                    "firstname": {
+                        "actualName": "FirstName",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Enter your First Name",
+                        "title": "First Name",
+                        "type": "string",
+                        "required": true
+                    },
+                    "entitytimezone": {
+                        "actualName": "EntityTimeZone",
+                        "hide": true,
+                        "format": "date-time",
+                        "placeholder": "EntityTimeZone",
+                        "title": "EntityTimeZone",
+                        "type": "string",
+                        "required": false
+                    },
+                    "gender": {
+                        "actualName": "Gender",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Select your Gender",
+                        "title": "Gender",
+                        "type": "string",
+                        "required": false,
+                        "enum": [
+                            "Male",
+                            "Female",
+                            "Others"
+                        ]
+                    },
+                    "phonenumber": {
+                        "actualName": "PhoneNumber",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Enter your Phone Nmuber",
+                        "title": "Phone Number",
+                        "type": "number",
+                        "required": false
+                    },
+                    "entityid": {
+                        "actualName": "EntityID",
+                        "hide": true,
+                        "placeholder": "EntityID",
+                        "title": "EntityID",
+                        "type": "string",
+                        "required": false
+                    },
+                    "uuid": {
+                        "actualName": "UUID",
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "actualName": "LastName",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Enter your Last Name",
+                        "title": "Last Name",
+                        "type": "string",
+                        "required": false
+                    },
+                    "password": {
+                        "actualName": "Password",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Set a Password",
+                        "title": "Password",
+                        "type": "string",
+                        "required": true
+                    },
+                    "createdby": {
+                        "actualName": "CreatedBy",
+                        "hide": true,
+                        "defaultValue": "$state:fullName",
+                        "placeholder": "CreatedBy",
+                        "title": "CreatedBy",
+                        "type": "string",
+                        "required": false
+                    },
+                    "modifieddatetime": {
+                        "actualName": "ModifiedDateTime",
+                        "hide": true,
+                        "placeholder": "ModifiedDateTime",
+                        "title": "ModifiedDateTime",
+                        "type": "string",
+                        "required": false
+                    },
+                    "modifiedby": {
+                        "actualName": "ModifiedBy",
+                        "hide": true,
+                        "defaultValue": "$state:fullName",
+                        "placeholder": "ModifiedBy",
+                        "title": "ModifiedBy",
+                        "type": "string",
+                        "required": false
+                    },
+                    "reenterpassword": {
+                        "actualName": "Re-Enter Password",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Re-Enter Password",
+                        "title": "Re-Enter Password",
+                        "type": "string",
+                        "required": true
+                    },
+                    "createddatetime": {
+                        "actualName": "CreatedDateTime",
+                        "hide": true,
+                        "placeholder": "CreatedDateTime",
+                        "title": "CreatedDateTime",
+                        "type": "string",
+                        "required": false
+                    },
+                    "verificationcode": {
+                        "actualName": "VerificationCode",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Enter Captcha Code",
+                        "title": "Verification code",
+                        "type": "number",
+                        "required": true
+                    },
+                    "age": {
+                        "actualName": "Age",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "format": "date",
+                        "placeholder": "Enter your Age",
+                        "title": "Age",
+                        "type": "number",
+                        "required": false
+                    },
+                    "email": {
+                        "actualName": "Email",
+                        "hideOnReport": false,
+                        "hide": false,
+                        "readonly": false,
+                        "placeholder": "Enter your Email ",
+                        "title": "Email",
+                        "type": "string",
+                        "required": true
+                    }
+                },
+                "routeOnSelect": false,
+                "primary": false
+            },
+            "signature": {
+                "roles": [],
+                "type": "object",
+                "properties": {
+                    "parent": {
+                        "actualName": "Parent",
+                        "type": "string"
+                    },
+                    "usersigndate": {
+                        "mdOffset": "5%",
+                        "defaultValue": "Today",
+                        "smOffset": "5%",
+                        "format": "date",
+                        "title": "Date",
+                        "type": "string",
+                        "xlOffset": "5%",
+                        "required": false,
+                        "actualName": "UserSignDate",
+                        "hide": false,
+                        "lgOffset": "5%",
+                        "readonly": false,
+                        "xsOffset": "5%"
+                    },
+                    "entitytimezone": {
+                        "actualName": "EntityTimeZone",
+                        "hide": true,
+                        "format": "date-time",
+                        "placeholder": "EntityTimeZone",
+                        "title": "EntityTimeZone",
+                        "type": "string",
+                        "required": false
+                    },
+                    "createdby": {
+                        "actualName": "CreatedBy",
+                        "hide": true,
+                        "defaultValue": "$state:fullName",
+                        "placeholder": "CreatedBy",
+                        "title": "CreatedBy",
+                        "type": "string",
+                        "required": false
+                    },
+                    "modifieddatetime": {
+                        "actualName": "ModifiedDateTime",
+                        "hide": true,
+                        "placeholder": "ModifiedDateTime",
+                        "title": "ModifiedDateTime",
+                        "type": "string",
+                        "required": false
+                    },
+                    "usersignature": {
+                        "actualName": "UserSignature",
+                        "hideOnReport": true,
+                        "view": "signature",
+                        "hide": false,
+                        "readonly": false,
+                        "title": "Author Signature",
+                        "type": "string",
+                        "sampleValue": "sample",
+                        "required": false,
+                        "conditionalSampleValue": "Signed",
+                        "displayDateFormat": "signature"
+                    },
+                    "entityid": {
+                        "actualName": "EntityID",
+                        "hide": true,
+                        "placeholder": "EntityID",
+                        "title": "EntityID",
+                        "type": "string",
+                        "required": false
+                    },
+                    "modifiedby": {
+                        "actualName": "ModifiedBy",
+                        "hide": true,
+                        "defaultValue": "$state:fullName",
+                        "placeholder": "ModifiedBy",
+                        "title": "ModifiedBy",
+                        "type": "string",
+                        "required": false
+                    },
+                    "createddatetime": {
+                        "actualName": "CreatedDateTime",
+                        "hide": true,
+                        "placeholder": "CreatedDateTime",
+                        "title": "CreatedDateTime",
+                        "type": "string",
+                        "required": false
+                    },
+                    "uuid": {
+                        "actualName": "UUID",
+                        "type": "string"
+                    },
+                    "username": {
+                        "actualName": "UserName",
+                        "hide": false,
+                        "readonly": true,
+                        "defaultValue": "$state:fullName",
+                        "title": "User Name",
+                        "type": "string",
+                        "required": false
+                    }
+                },
+                "routeOnSelect": false,
+                "primary": false
+            },
+            "gps": {
+                "roles": [],
+                "type": "object",
+                "properties": {},
+                "routeOnSelect": false,
+                "primary": false
+            },
+            "camera": {
+                "roles": [],
+                "type": "object",
+                "buttonEvent": "route",
+                "properties": {},
+                "routeOnSelect": false,
+                "primary": "        FALSE"
+            }
+        }
+    },
+    "app": "Covid_19Test",
+    "roles": [],
+    "tableName": "SignUp",
+    "layout": [
+        {
+            "fxLayoutAlign": "flex-start",
+            "fxLayoutWrap": "wrap",
+            "justify-content": "space-between",
+            "type": "flex",
+            "items": [
+                {
+                    "fxFlex": "0 0 calc(100%)",
+                    "expanded": true,
+                    "type": "expansion-panel",
+                    "title": "User Details",
+                    "collapsible": false,
+                    "items": [
+                        {
+                            "fxLayoutWrap": "wrap",
+                            "fxLayoutGap": "10px",
+                            "type": "flex",
+                            "items": [
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "First Name",
+                                    "type": "string",
+                                    "key": "userdetails.firstname"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Last Name",
+                                    "type": "string",
+                                    "key": "userdetails.lastname"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Gender",
+                                    "type": "enum",
+                                    "key": "userdetails.gender"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Age",
+                                    "type": "date",
+                                    "key": "userdetails.age"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Email",
+                                    "type": "string",
+                                    "key": "userdetails.email"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Phone Number",
+                                    "type": "number",
+                                    "key": "userdetails.phonenumber"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Password",
+                                    "type": "string",
+                                    "key": "userdetails.password"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Re-Enter Password",
+                                    "type": "string",
+                                    "key": "userdetails.reenterpassword"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "100%",
+                                        "md": "100%",
+                                        "sm": "100%",
+                                        "xs": "100%",
+                                        "lg": "100%"
+                                    },
+                                    "title": "Verification code",
+                                    "type": "number",
+                                    "key": "userdetails.verificationcode"
+                                }
+                            ],
+                            "fxLayout": "row"
+                        }
+                    ]
+                },
+                {
+                    "fxFlex": "0 0 calc(100%)",
+                    "expanded": false,
+                    "type": "expansion-panel",
+                    "title": "Signature",
+                    "collapsible": true,
+                    "items": [
+                        {
+                            "fxLayoutWrap": "wrap",
+                            "fxLayoutGap": "10px",
+                            "type": "flex",
+                            "items": [
+                                {
+                                    "options": {
+                                        "xl": "70%",
+                                        "md": "70%",
+                                        "sm": "70%",
+                                        "xs": "100%",
+                                        "lg": "70%"
+                                    },
+                                    "title": "User Name",
+                                    "type": "string",
+                                    "key": "signature.username"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "25%",
+                                        "md": "25%",
+                                        "sm": "25%",
+                                        "xs": "100%",
+                                        "lg": "25%"
+                                    },
+                                    "title": "Date",
+                                    "type": "date",
+                                    "key": "signature.usersigndate"
+                                },
+                                {
+                                    "options": {
+                                        "xl": "30%",
+                                        "md": "60%",
+                                        "sm": "85%",
+                                        "xs": "100%",
+                                        "lg": "40%"
+                                    },
+                                    "title": "Author Signature",
+                                    "type": "signature",
+                                    "key": "signature.usersignature"
+                                }
+                            ],
+                            "fxLayout": "row"
+                        }
+                    ]
+                },
+                {
+                    "fxFlex": "0 0 calc(100%)",
+                    "expanded": "                FALSE",
+                    "type": "expansion-panel",
+                    "title": "Camera",
+                    "collapsible": "             TRUE",
+                    "items": [
+                        {
+                            "fxLayoutAlign": "flex-start",
+                            "fxLayoutWrap": "wrap",
+                            "fxLayoutGap": "10px",
+                            "type": "flex",
+                            "items": [],
+                            "fxLayout": "row"
+                        }
+                    ]
+                },
+                {
+                    "fxFlex": "0 0 calc(100%)",
+                    "expanded": false,
+                    "type": "expansion-panel",
+                    "title": "GPS",
+                    "collapsible": true,
+                    "items": [
+                        {
+                            "fxLayoutWrap": "wrap",
+                            "fxLayoutGap": "10px",
+                            "type": "flex",
+                            "items": [],
+                            "fxLayout": "row"
+                        }
+                    ]
+                }
+            ],
+            "fxLayout": "row"
+        }
+    ],
+    "categoryType": "",
+    "enums": {
+        "Gender": [
+            "Male",
+            "Female",
+            "Others"
+        ]
+    },
+    "TableName": "SignUp",
+    "pageType": "SignUp",
+    "$state": "",
+    "Version": "1",
+    "options": {
+        "submit": true
+    },
+    "page": "SignUp",
+    "conditionalFields": [
+        {
+            "variables": {
+                "AU5": "signature.usersignature"
+            },
+            "formula": "IF(AU5<>\"\",TRUE,FALSE)",
+            "formField": "signature.username"
+        },
+        {
+            "variables": {
+                "AU5": "signature.usersignature"
+            },
+            "formula": "IF(AU5<>\"\",TRUE,FALSE)",
+            "formField": "signature.usersigndate"
+        },
+        {
+            "variables": {
+                "AU5": "signature.usersignature"
+            },
+            "formula": "IF(AU5<>\"\",TRUE,FALSE)",
+            "formField": "signature.username"
+        },
+        {
+            "variables": {
+                "AU5": "signature.usersignature"
+            },
+            "formula": "IF(AU5<>\"\",TRUE,FALSE)",
+            "formField": "signature.usersigndate"
+        }
+    ],
+    "tenant": "All",
+    "breadcrumbDisplayName": ""
+}
