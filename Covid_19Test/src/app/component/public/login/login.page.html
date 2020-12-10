@@ -1,0 +1,23 @@
+<ion-content [fullscreen]="true" class="login-pg-warpper">
+  <div class="login-ctnt-warpper">
+    <h1>Login Page</h1>
+    <form [formGroup]="loginForm" class="ip-wrapper" (ngSubmit)="onLogin()">
+      <ion-input class="ip-login" formControlName="username" placeholder="Username" type="text" clearInput ></ion-input>
+      <ion-input class="ip-login" formControlName="password" placeholder="Password" type="password" clearInput ></ion-input>
+      <div class="login-btn-wrapper">
+        <ion-button 
+          class="login-btn" 
+          type="submit"
+          color="success" 
+          fill="outline" 
+          shape="round"
+          [disabled]="btn_disabled"
+          expand="block">
+            Login
+            <ion-spinner *ngIf="btn_disabled" name="bubbles"></ion-spinner>
+        </ion-button>
+      </div>
+    </form>
+  <p>Not a member? <span routerLink="/signup" style="color: rgb(71, 71, 202);">Signup</span></p>
+    </div>
+</ion-content>
