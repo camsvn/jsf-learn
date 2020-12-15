@@ -1,9 +1,22 @@
-<ion-content [fullscreen]="true" class="signup-pg-warpper">
+<!-- <ion-content [fullscreen]="true" class="signup-pg-warpper"> -->
     <!-- <div class="signup-ctnt-warpper"> -->            
     <ion-row class="ion-justify-content-center header">
         <h1>SignUp Page</h1>
     </ion-row>
-    <!-- Form Generator Goes Here --> 
+    
+    <ion-content class="ion-padding">
+        <!-- <json-schema-form #formGenerator loadExternalAssets="true" [schema]="schema" [layout]="layout" 
+            [enum]="enum" [data]="data" [options]="jsonFormOptions" [framework]="'material-design'" [state]="state"
+            (onSubmit)="onSubmitFn($event) "
+        >
+        </json-schema-form> -->
+        <json-schema-form #formGenerator loadExternalAssets="true" [schema]="schema" [layout]="layout" 
+          [roles]="roles" [images]="images" [userRoles]="userRoles" [formulas]="formulas" [conditionalFields]="conditionalFields" [lockPage]="lockPage"
+          [enum]="enum" [data]="data" [options]="jsonFormOptions" [framework]="'material-design'" [state]="state"
+          (onSubmit)="onSubmitFn($event)" [lookup]="lookup"
+           >
+        </json-schema-form>
+    </ion-content>
     <!-- </div> -->
-  </ion-content>
+  <!-- </ion-content> -->
   
