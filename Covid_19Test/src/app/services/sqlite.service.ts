@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/angular';
 
 import { Plugins } from '@capacitor/core';
 import '@capacitor-community/sqlite';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject'
 
 const { CapacitorSQLite, Device } = Plugins;
 
@@ -13,8 +14,8 @@ export class SQLiteService {
   sqlite: any;
   // isService: boolean = false;
   _platform: string;
-  _isPermission: boolean = false;
-  // isService = new BehaviorSubject(undefined);
+  _isPermission: boolean = true;
+  isService = new BehaviorSubject(undefined);
 
   constructor(
     private toastController :ToastController
@@ -40,23 +41,23 @@ export class SQLiteService {
     this.sqlite = CapacitorSQLite;
     // this.isService = true;
 
-    if (this._platform === 'android') {
-      const handlerPermissions = this.sqlite.addListener(
-            'androidPermissionsRequest', async (data:any) => {
-        if (data.permissionGranted === 1) {
-          this._isPermission = true;
-          // this.isService.next(this._isPermission);
-        } else {
-          this._isPermission = false;
-          // this.isService.next(this._isPermission);
-        }
-      });
-      try {
-        this.sqlite.requestPermissions();
-      } catch (e) {
-        console.log('Error requesting permissions!' + JSON.stringify(e));
-      }
-    }
+    // if (this._platform === 'android') {
+    //   const handlerPermissions = this.sqlite.addListener(
+    //         'androidPermissionsRequest', async (data:any) => {
+    //     if (data.permissionGranted === 1) {
+    //       this._isPermission = true;
+    //       this.isService.next(this._isPermission);
+    //     } else {
+    //       this._isPermission = false;
+    //       this.isService.next(this._isPermission);
+    //     }
+    //   });
+    //   try {
+    //     this.sqlite.requestPermissions();
+    //   } catch (e) {
+    //     console.log('Error requesting permissions!' + JSON.stringify(e));
+    //   }
+    // }
     // if(this._platform === "android") {
     //   try {
     //     await this.sqlite.requestPermissions();
