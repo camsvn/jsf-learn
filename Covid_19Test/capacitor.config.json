@@ -1,12 +1,13 @@
 {
-  "appId": "io.ionic.starter",
+  "appId": "io.ionic.covid",
   "appName": "Covid_19Test",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 0
+      "launchShowDuration": 0,
+      "--launchAutoHide": false
     }
   },
   "cordova": {}
