@@ -130,22 +130,11 @@
                         "type": "string",
                         "required": false
                     },
-                    "verificationcode": {
-                        "actualName": "VerificationCode",
-                        "hideOnReport": false,
-                        "hide": false,
-                        "readonly": false,
-                        "placeholder": "Enter Captcha Code",
-                        "title": "Verification code",
-                        "type": "number",
-                        "required": true
-                    },
                     "age": {
                         "actualName": "Age",
                         "hideOnReport": false,
                         "hide": false,
                         "readonly": false,
-                        "format": "date",
                         "placeholder": "Enter your Age",
                         "title": "Age",
                         "type": "number",
@@ -259,7 +248,7 @@
                     "username": {
                         "actualName": "UserName",
                         "hide": false,
-                        "readonly": true,
+                        "readonly": false,
                         "defaultValue": "$state:fullName",
                         "title": "User Name",
                         "type": "string",
@@ -268,21 +257,6 @@
                 },
                 "routeOnSelect": false,
                 "primary": false
-            },
-            "gps": {
-                "roles": [],
-                "type": "object",
-                "properties": {},
-                "routeOnSelect": false,
-                "primary": false
-            },
-            "camera": {
-                "roles": [],
-                "type": "object",
-                "buttonEvent": "route",
-                "properties": {},
-                "routeOnSelect": false,
-                "primary": "        FALSE"
             }
         }
     },
@@ -301,7 +275,7 @@
                     "expanded": true,
                     "type": "expansion-panel",
                     "title": "User Details",
-                    "collapsible": false,
+                    "collapsible": true,
                     "items": [
                         {
                             "fxLayoutWrap": "wrap",
@@ -353,7 +327,7 @@
                                         "lg": "100%"
                                     },
                                     "title": "Age",
-                                    "type": "date",
+                                    "type": "number",
                                     "key": "userdetails.age"
                                 },
                                 {
@@ -403,18 +377,6 @@
                                     "title": "Re-Enter Password",
                                     "type": "string",
                                     "key": "userdetails.reenterpassword"
-                                },
-                                {
-                                    "options": {
-                                        "xl": "100%",
-                                        "md": "100%",
-                                        "sm": "100%",
-                                        "xs": "100%",
-                                        "lg": "100%"
-                                    },
-                                    "title": "Verification code",
-                                    "type": "number",
-                                    "key": "userdetails.verificationcode"
                                 }
                             ],
                             "fxLayout": "row"
@@ -447,11 +409,11 @@
                                 },
                                 {
                                     "options": {
-                                        "xl": "25%",
-                                        "md": "25%",
-                                        "sm": "25%",
+                                        "xl": "70%",
+                                        "md": "70%",
+                                        "sm": "70%",
                                         "xs": "100%",
-                                        "lg": "25%"
+                                        "lg": "70%"
                                     },
                                     "title": "Date",
                                     "type": "date",
@@ -470,39 +432,6 @@
                                     "key": "signature.usersignature"
                                 }
                             ],
-                            "fxLayout": "row"
-                        }
-                    ]
-                },
-                {
-                    "fxFlex": "0 0 calc(100%)",
-                    "expanded": "                FALSE",
-                    "type": "expansion-panel",
-                    "title": "Camera",
-                    "collapsible": "             TRUE",
-                    "items": [
-                        {
-                            "fxLayoutAlign": "flex-start",
-                            "fxLayoutWrap": "wrap",
-                            "fxLayoutGap": "10px",
-                            "type": "flex",
-                            "items": [],
-                            "fxLayout": "row"
-                        }
-                    ]
-                },
-                {
-                    "fxFlex": "0 0 calc(100%)",
-                    "expanded": false,
-                    "type": "expansion-panel",
-                    "title": "GPS",
-                    "collapsible": true,
-                    "items": [
-                        {
-                            "fxLayoutWrap": "wrap",
-                            "fxLayoutGap": "10px",
-                            "type": "flex",
-                            "items": [],
                             "fxLayout": "row"
                         }
                     ]
