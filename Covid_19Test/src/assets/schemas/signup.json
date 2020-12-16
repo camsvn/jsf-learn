@@ -252,7 +252,7 @@
                         "defaultValue": "$state:fullName",
                         "title": "User Name",
                         "type": "string",
-                        "required": false
+                        "required": true
                     }
                 },
                 "routeOnSelect": false,
