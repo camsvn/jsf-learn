@@ -9,7 +9,7 @@ export class DBQueries {
         "schema" TEXT UNIQUE
     );`;
     public static CTBL_users = `
-    CREATE TABLE "users" (
+    CREATE TABLE IF NOT EXISTS "${DBTables.UserTBL}" (
         "uuid"	VARCHAR(40) PRIMARY KEY NOT NULL,
         "username"	TEXT NOT NULL UNIQUE,
         "payload"	TEXT
