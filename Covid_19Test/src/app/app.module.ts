@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SQLiteService } from './services/sqlite.service';
+import { PersistentService } from './services/persistent.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +26,7 @@ import { SQLiteService } from './services/sqlite.service';
     StatusBar,
     SplashScreen,
     SQLiteService,
+    PersistentService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
