@@ -47,7 +47,7 @@ export class LoginPage {
                 username: '',
                 password: ''
               })
-              this._router.navigateByUrl('/login');
+              this._router.navigateByUrl('/home');
             } else {
               this._SQLiteService.presentToast("Invaid Username or Password");
             }       
