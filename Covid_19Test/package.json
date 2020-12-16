@@ -16,6 +16,7 @@
     "--op:android": "npm run build && npx cap update && npx cap copy && npx cap copy android && npx cap open android",
     "op:android": "npm run build && npx cap update && npx cap copy android && npx cap open android",
     "open:android": "npm install && npm run op:android",
+    "live:android": "npx ionic cap run android -l --external",
     "prod:android": "ng build  --prod && npx cap update && npx cap copy && npx cap copy web && npx cap copy android",
     "dev:ios": "npm run build && npx cap add ios && npx cap update && npx cap copy && npx cap copy web && npx cap copy ios",
     "open:ios": "npm run build && npx cap update && npx cap copy ios && npx cap open ios",
