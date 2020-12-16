@@ -5,6 +5,7 @@ export class DBConstants {
 
 export class DBTables {
   public static SchemaTBL = 'schemas';
+  public static UserTBL = 'users';
 }
 
 export class Schemas {

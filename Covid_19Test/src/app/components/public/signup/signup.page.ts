@@ -5,7 +5,7 @@ import { Schemas } from 'app/globals/constants/app-constants'
 import { SQLiteService } from 'app/services/sqlite.service'
 
 import { JsonSchemaFormComponent } from '@visur/formgenerator-core';
-import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',
@@ -44,7 +44,9 @@ export class SignupPage implements AfterViewInit  {
   @ViewChild(JsonSchemaFormComponent)
   formGenerator: JsonSchemaFormComponent
 
-  constructor(private _SQLiteService: SQLiteService){}
+  constructor(
+    private _SQLiteService: SQLiteService,
+    private _router: Router){}
 
   ngAfterViewInit(){
     this.getSchema();
@@ -79,8 +81,22 @@ export class SignupPage implements AfterViewInit  {
     }    
   }
 
-  onSubmitFn(data){
-    console.log(data);
+  async onSubmitFn(data){
+    try {
+      if (data.isValid) {
+        let retRun = await this._SQLiteService.run(DBQueries.getQRY_INS_User(data.data))
+        if (retRun.changes.changes === 1) {
+          console.log('User Inserted')
+          this._SQLiteService.presentToast("User Inserted")
+          this._router.navigateByUrl('/home')
+        } else  
+          throw new Error("Error: Value not inserted")
+      } else
+      throw new Error("Error: Invalid form values")        
+    } catch (error) {
+      console.log(error.message)
+      this._SQLiteService.presentToast(error.message)
+    }    
   }
 
 }
