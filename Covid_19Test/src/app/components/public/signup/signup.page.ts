@@ -88,7 +88,7 @@ export class SignupPage implements AfterViewInit  {
         if (retRun.changes.changes === 1) {
           console.log('User Inserted')
           this._SQLiteService.presentToast("User Inserted")
-          this._router.navigateByUrl('/home')
+          this._router.navigateByUrl('/login')
         } else  
           throw new Error("Error: Value not inserted")
       } else

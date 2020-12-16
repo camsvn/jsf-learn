@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms'
 import { Router } from '@angular/router'
 import { DBQueries } from 'app/globals/sqlite/query-operations';
+import { PersistentService } from 'app/services/persistent.service';
 import { SQLiteService } from 'app/services/sqlite.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class LoginPage {
 
   constructor(
     private _SQLiteService: SQLiteService,
+    private _PersistentService: PersistentService,
     private _router: Router
     ) { }
  
@@ -35,11 +37,11 @@ export class LoginPage {
             let payload = JSON.parse(data.values[0].payload)
             // console.log(typeof payload, data.values[0].uuid, payload.userdetails);
             if(payload.userdetails.password === this.loginForm.value.password) {
-              localStorage.setItem("loggedIn","true");
-              localStorage.setItem("user",JSON.stringify({
+              this._PersistentService.changeLoginStatus(true)
+              this._PersistentService.changeUserDetails(JSON.stringify({
                 id: data.values[0].uuid,
                 data: payload
-              }));
+              }));              
               this._SQLiteService.presentToast(`logged in as ${payload.userdetails.firstname}`);
               this.loginForm.setValue({
                 username: '',
@@ -50,7 +52,7 @@ export class LoginPage {
               this._SQLiteService.presentToast("Invaid Username or Password");
             }       
           } else{
-            localStorage.setItem("loggedIn","false");
+            this._PersistentService.changeLoginStatus(false);
             this._SQLiteService.presentToast("Invaid Username or Password");
           }
           this.btn_disabled = false
