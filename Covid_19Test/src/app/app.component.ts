@@ -56,10 +56,7 @@ export class AppComponent implements AfterViewInit {
         if(resOpen.result) {
           console.log("DB Created");
           this._SQLiteService.execute(DBQueries.CTBL_schemas).then(d => this.createSchemaTable(d));
-          /**
-           * TODO
-           *  Create User Table
-           */
+          this._SQLiteService.execute(DBQueries.CTBL_users).then(d => this.createUserTable(d));
         }
       } else {
         this._SQLiteService.presentToast('CapacitorSQLite Plugin: Initialization Failed');
@@ -67,7 +64,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   async createSchemaTable (data: {changes:{changes: number},message: string}) {
-    console.log('Returned' ,data)
+    // console.log('Returned' ,data)
     if(data.changes.changes === 0){
       console.log("Table 'schemas' created")
       getSchema(Schemas.Signup)
@@ -75,7 +72,15 @@ export class AppComponent implements AfterViewInit {
         .catch(e => console.log(e))
     }
     else 
-    this._SQLiteService.presentToast(`Table not created ${data.message}`)
+    this._SQLiteService.presentToast(`Schemas Table not created ${data.message}`)
+  }
+
+  async createUserTable(data: {changes:{changes: number},message: string}) {
+    if(data.changes.changes === 0){
+      console.log("Table 'users' created")      
+    }
+    else 
+    console.log(`User Table not created ${data.message}`)
   }
 
   async insertSchema (schema: string, schemaName: string) {
