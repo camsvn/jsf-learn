@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PersistentService } from 'app/services/persistent.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class HomePage implements OnInit {
   user: string;
 
   constructor(
-    private _PersistentService: PersistentService
+    private _PersistentService: PersistentService,
+    private _router: Router
   ) {}
 
   ngOnInit() {
@@ -21,6 +23,11 @@ export class HomePage implements OnInit {
         this.user = `${this.userDetails.data.userdetails.firstname} ${this.userDetails.data.userdetails.lastname ? this.userDetails.data.userdetails.lastname : null }` 
       }
     });
+  }
+
+  onLogout() {
+    this._PersistentService.logout();
+    this._router.navigateByUrl('/login')
   }
 
 }

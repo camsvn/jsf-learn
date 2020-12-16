@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PersistentService } from './services/persistent.service';
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: (() => {
-      return JSON.parse(localStorage.getItem("loggedIn")) ? 'home' : 'login';
+      return localStorage.getItem("loggedIn") ? 'home' : 'login';
     })(),
     pathMatch: 'full'
   },

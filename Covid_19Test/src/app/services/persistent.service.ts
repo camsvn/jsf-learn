@@ -48,4 +48,14 @@ export class PersistentService {
     this.userDetail.next([payload])
     localStorage.setItem("user",payload);
   }
+
+  /**
+   * Service to logout User
+   */
+  logout() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("loggedIn");
+    this.userDetail.next([])
+    this.loggedIn.next(false);
+  }
 }
