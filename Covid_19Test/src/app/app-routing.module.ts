@@ -8,7 +8,9 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: (() => {
+      return JSON.parse(localStorage.getItem("loggedIn")) ? 'home' : 'login';
+    })(),
     pathMatch: 'full'
   },
   {
