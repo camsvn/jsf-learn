@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SQLiteService } from './services/sqlite.service';
 import { PersistentService } from './services/persistent.service';
+import { AuthGuard, LoginGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,8 @@ import { PersistentService } from './services/persistent.service';
     SplashScreen,
     SQLiteService,
     PersistentService,
+    AuthGuard,
+    LoginGuard,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ export class PersistentService {
   constructor() { }
 
   // public editDataDetails: any = [];
-  private loggedIn = new  BehaviorSubject(localStorage.getItem('loggedIn') ? localStorage.getItem('loggedIn') : false);
+  private loggedIn = new  BehaviorSubject(localStorage.getItem('loggedIn') ? JSON.parse(localStorage.getItem('loggedIn')) : false);
   private userDetail = new  BehaviorSubject(localStorage.getItem('loggedIn') ? [localStorage.getItem('user')] : []);
   // private messageSource = new  BehaviorSubject(this.editDataDetails);
   

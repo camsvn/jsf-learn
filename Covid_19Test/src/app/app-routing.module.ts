@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PersistentService } from './services/persistent.service';
+import { AuthGuard, LoginGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./components/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -16,11 +17,13 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./components/public/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./components/public/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [LoginGuard]
   },
   {
     path: 'signup',
-    loadChildren: () => import('./components/public/signup/signup.module').then( m => m.SignupPageModule)
+    loadChildren: () => import('./components/public/signup/signup.module').then( m => m.SignupPageModule),
+    canActivate: [LoginGuard]
   }
 ];
 
