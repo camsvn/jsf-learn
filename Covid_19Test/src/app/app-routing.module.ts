@@ -13,6 +13,7 @@ const routes: Routes = [
     redirectTo: (() => {
       return localStorage.getItem("loggedIn") ? 'home' : 'login';
     })(),
+    // redirectTo: 'home',
     pathMatch: 'full'
   },
   {

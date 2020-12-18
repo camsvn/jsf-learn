@@ -8,8 +8,19 @@
   padding: 1.5rem .5rem;
 }
 
+.avatar-thumbnail{
+  margin-right: 0.5rem;
+}
+
 .avatar{
-  margin-right: 1rem;
+  height: 7rem;
+  width: 7rem;
+}
+
+.avatar-wrapper{
+  transform: translateY(50%);
+  position: relative;
+  z-index: 1;
 }
 
 .user-label{
@@ -25,4 +36,16 @@ ion-icon {
   font-size: 1.25rem;
 }
 
+.app-main {
+  --background: linear-gradient(45deg, #ff5f6d, #ffc371);
+}
+
+.card {
+  margin: unset;
+  height: calc(100vh - 13.5rem);  
+}
+
+.card-header{
+  margin-top: 4.5rem;
+}
 
